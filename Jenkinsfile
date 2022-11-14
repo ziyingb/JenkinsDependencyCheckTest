@@ -1,6 +1,11 @@
 pipeline {
 	agent any
-	stages {
+	stages{
+		stage('Checkout SCM'){
+			steps{
+				git '/home/Documents/Github/JenkinsDependencyCheckTest'
+			}
+		}
 
 		stage('OWASP DependencyCheck') {
 			steps {
